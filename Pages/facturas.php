@@ -1,5 +1,6 @@
 <?php
 include('../Logic/factura.php');
+$stmt = sqlsrv_query($conn, "EXEC getFacturas");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +28,16 @@ include('../Logic/factura.php');
         <h1 class="text-center" style="font-size: 40px">Facturas</h1>
         <hr size="5px" color="white" />
         <div class="d-flex gap-3">
-          <button
-            id="btn"
-            class="btn rounded-sm shadow-sm"
-            style="font-family: 'Lexend', sans-serif"
-          >
-            Imprimir Reporte
-          </button>
+          <form action="report.php" method="post">
+            <button
+              id="btn"
+              type="submit"
+              class="btn rounded-sm shadow-sm"
+              style="font-family: 'Lexend', sans-serif"
+            >
+              Imprimir Reporte
+            </button>
+          </form>
           <a
             id="btn"
             href="main.html"
@@ -66,7 +70,6 @@ include('../Logic/factura.php');
             </thead>
             <tbody>
               <?php
-                $stmt = sqlsrv_query($conn, "EXEC getFacturas");
 
                 if ($stmt){
                   while ($row = sqlsrv_fetch_array($stmt)){
@@ -105,11 +108,10 @@ include('../Logic/factura.php');
                   }
                 ?>
             </tbody>
-          </table>
         </div>
       </div>
     </div>
-
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
