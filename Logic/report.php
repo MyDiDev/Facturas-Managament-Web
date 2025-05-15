@@ -6,12 +6,12 @@
     use Dompdf\Options;
 
     $dompdf = new Dompdf();
-    $options = new Options();
 
+    $options = new Options();
     $options->set("isRemoteEnabled", true);
 
     $html = "";
-
+    
     $stmt = sqlsrv_query($conn, "EXEC getFacturas;");
 
     while($row = sqlsrv_fetch_array($stmt)){
@@ -104,9 +104,6 @@
     EOD;
 
     $dompdf->loadHtml($outHtml);
-
     $dompdf->render();
-
     $dompdf->stream();
-
 ?>

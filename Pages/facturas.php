@@ -28,7 +28,7 @@ $stmt = sqlsrv_query($conn, "EXEC getFacturas");
         <h1 class="text-center" style="font-size: 40px">Facturas</h1>
         <hr size="5px" color="white" />
         <div class="d-flex gap-3">
-          <form action="report.php" method="post">
+          <form action="../Logic/report.php">
             <button
               id="btn"
               type="submit"
@@ -56,16 +56,16 @@ $stmt = sqlsrv_query($conn, "EXEC getFacturas");
           <table class="table table-striped rounded-sm">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Descripcion</th>
-                <th>Categoria</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario</th>
-                <th>Itebis</th>
-                <th>Descuento</th>
-                <th>Total</th>
-                <th></th>
-                <th></th>
+                <th style="background-color: #0596b3;" class="text-white">#</th>
+                <th style="background-color: #0596b3;" class="text-white">Descripcion</th>
+                <th style="background-color: #0596b3;" class="text-white">Categoria</th>
+                <th style="background-color: #0596b3;" class="text-white">Cantidad</th>
+                <th style="background-color: #0596b3;" class="text-white">Precio Unitario</th>
+                <th style="background-color: #0596b3;" class="text-white">Itebis</th>
+                <th style="background-color: #0596b3;" class="text-white">Descuento</th>
+                <th style="background-color: #0596b3;" class="text-white">Total</th>
+                <th style="background-color: #0596b3;" class="text-white"></th>
+                <th style="background-color: #0596b3;" class="text-white"></th>
               </tr>
             </thead>
             <tbody>
@@ -93,7 +93,7 @@ $stmt = sqlsrv_query($conn, "EXEC getFacturas");
                           <td>$descuento</td>
                           <td>$total_general</td>
                           <td>
-                            <a href="update_factura.php?id=$id" class="btn btn-primary">Editar</a>
+                            <a href="update_factura.php?id=$id" class="btn" id="btn">Editar</a>
                           </td>
                           <td>
                             <form action="../Logic/factura.php" method="post">
