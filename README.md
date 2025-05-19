@@ -97,6 +97,7 @@ $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
 $dompdf->stream('documento.pdf');
+?>
 ```
 
 Este script generará un archivo PDF con el contenido HTML especificado y lo enviará al navegador para su descarga.
