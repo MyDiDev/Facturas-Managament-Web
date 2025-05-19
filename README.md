@@ -56,13 +56,13 @@ Claro, puedo ayudarte a crear una documentación básica para utilizar la librer
 
 #### Usando Composer (recomendado)
 
-Si tu proyecto utiliza Composer, puedes instalar DOMPDF ejecutando el siguiente comando en la raíz de tu proyecto:([BaulPHP][1])
+Si tu proyecto utiliza Composer, puedes instalar DOMPDF ejecutando el siguiente comando en la raíz de tu proyecto:
 
 ```bash
 composer require dompdf/dompdf
 ```
 
-Luego, incluye el autoloader de Composer al inicio de tu script PHP:([GitHub][2])
+Luego, incluye el autoloader de Composer al inicio de tu script PHP:
 
 ```php
 require 'vendor/autoload.php';
@@ -70,13 +70,13 @@ require 'vendor/autoload.php';
 
 #### Instalación manual
 
-Si prefieres no usar Composer, puedes descargar la librería desde su [repositorio oficial en GitHub](https://github.com/dompdf/dompdf) y seguir las instrucciones de instalación manual.([kabytes.com][3])
+Si prefieres no usar Composer, puedes descargar la librería desde su [repositorio oficial en GitHub](https://github.com/dompdf/dompdf) y seguir las instrucciones de instalación manual.
 
 ---
 
 ### 2. Uso Básico
 
-A continuación, se muestra un ejemplo básico de cómo generar un archivo PDF a partir de contenido HTML:([Miguel Martínez][4])
+A continuación, se muestra un ejemplo básico de cómo generar un archivo PDF a partir de contenido HTML:
 
 ```php
 <?php
@@ -99,32 +99,32 @@ $dompdf->render();
 $dompdf->stream('documento.pdf');
 ```
 
-Este script generará un archivo PDF con el contenido HTML especificado y lo enviará al navegador para su descarga.([kabytes.com][3])
+Este script generará un archivo PDF con el contenido HTML especificado y lo enviará al navegador para su descarga.
 
 ---
 
 ### 3. Funcionalidades Avanzadas
 
-- **Establecer fuente por defecto**: Puedes configurar la fuente predeterminada del PDF utilizando el siguiente código:([srcodigofuente.es][5])
+- **Establecer fuente por defecto**: Puedes configurar la fuente predeterminada del PDF utilizando el siguiente código:
 
 ```php
   $dompdf->set_option('defaultFont', 'Courier');
 ```
 
-- **Obtener dimensiones del documento**: Para obtener el ancho y alto del documento generado:([srcodigofuente.es][5])
+- **Obtener dimensiones del documento**: Para obtener el ancho y alto del documento generado:
 
 ```php
   $width = $dompdf->get_width();
   $height = $dompdf->get_height();
 ```
 
-- **Mostrar PDF en el navegador**: Para mostrar el PDF directamente en el navegador sin forzar la descarga:([BaulPHP][1])
+- **Mostrar PDF en el navegador**: Para mostrar el PDF directamente en el navegador sin forzar la descarga:
 
 ```php
   $dompdf->stream('documento.pdf', array('Attachment' => false));
 ```
 
-- **Guardar PDF en el servidor**: Para guardar el PDF generado en el servidor:([kabytes.com][3])
+- **Guardar PDF en el servidor**: Para guardar el PDF generado en el servidor:
 
 ```php
   $output = $dompdf->output();
@@ -138,7 +138,7 @@ Este script generará un archivo PDF con el contenido HTML especificado y lo env
 - DOMPDF requiere PHP 5.3 o superior.
 - Es compatible con HTML 4.01 y CSS 2.1.
 - No soporta JavaScript ni formularios interactivos.
-- Se recomienda tener habilitada la extensión `mbstring` de PHP para un mejor manejo de caracteres multibyte.([kabytes.com][3])
+- Se recomienda tener habilitada la extensión `mbstring` de PHP para un mejor manejo de caracteres multibyte.
 
 ---
 
